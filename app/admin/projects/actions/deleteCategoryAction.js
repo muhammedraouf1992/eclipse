@@ -1,6 +1,7 @@
 "use server";
-import fs from "fs/promises";
 import prisma from "@/prismaClient";
+import fs from "fs/promises";
+
 import { revalidatePath } from "next/cache";
 import path from "path";
 export const deleteCategoryAction = async (category) => {

@@ -2,9 +2,10 @@
 import fs from "fs/promises";
 
 import { addProjectCategorySchema } from "@/lib/validationSchema";
-import prisma from "@/prismaClient";
+
 import { revalidatePath } from "next/cache";
 import { convertToKebabCase } from "@/lib/utils";
+import prisma from "@/prismaClient";
 
 export const addProjectCategory = async (formData) => {
   const newData = Object.fromEntries(formData.entries());

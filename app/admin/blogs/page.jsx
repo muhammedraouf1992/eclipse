@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import prisma from "@/prismaClient";
+
 import Link from "next/link";
 import React from "react";
 import { BlogTable } from "./_components/BlogTable";
+import prisma from "@/prismaClient";
 
 const BlogsPage = async () => {
   const blogs = await prisma.blog.findMany({});

@@ -1,10 +1,11 @@
 "use server";
 import fs from "fs/promises";
 import { editCategorySchema } from "@/lib/validationSchema";
-import prisma from "@/prismaClient";
+
 import path from "path";
 import { revalidatePath } from "next/cache";
 import { convertToKebabCase } from "@/lib/utils";
+import prisma from "@/prismaClient";
 
 export const editCategoryAction = async (formData, category) => {
   const newData = Object.fromEntries(formData.entries());

@@ -1,7 +1,8 @@
 import CustomBtn from "@/components/layout/CustomBtn";
-import prisma from "@/prismaClient";
+
 import React from "react";
 import BlogCard from "./BlogCard";
+import prisma from "@/prismaClient";
 
 const BlogsSection = async ({ variant }) => {
   const blogNumber = variant == "page" ? 10 : 2;
