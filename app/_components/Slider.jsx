@@ -38,28 +38,76 @@ const Slider = () => {
         className="mySwiper !py-10"
       >
         <SwiperSlide>
-          <Image src={slider1} width={400} height={400} alt="slider image" />
+          <Image
+            src={slider1}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={slider2} width={400} height={400} alt="slider image" />
+          <Image
+            src={slider2}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={slider3} width={400} height={400} alt="slider image" />
+          <Image
+            src={slider3}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={slider4} width={400} height={400} alt="slider image" />
+          <Image
+            src={slider4}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <Image
+            src={slider4}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <Image
+            src={slider1}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <Image
+            src={slider4}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <Image
+            src={slider2}
+            width={400}
+            height={400}
+            alt="slider image"
+            sizes="400px"
+          />
         </SwiperSlide>
       </Swiper>
     </div>

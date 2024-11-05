@@ -11,6 +11,7 @@ const Aboutsection = () => {
             src={aboutImg}
             width={"450"}
             height={"916"}
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
             alt="about image"
           />
         </div>

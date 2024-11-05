@@ -12,34 +12,94 @@ const Brands = () => {
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5">
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center col-span-2 lg:col-span-1">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
         <div className="p-[50px] border border-white/10 flex justify-center items-center col-span-2 lg:col-span-1">
-          <Image src={brand} width={100} height={100} alt="brand image" />
+          <Image
+            src={brand}
+            width={100}
+            height={100}
+            alt="brand image"
+            sizes="(min-width: 520px) 450px, calc(95vw - 25px)"
+          />
         </div>
       </div>
     </section>
