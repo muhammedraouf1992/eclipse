@@ -33,8 +33,6 @@ const Aboutsection = () => {
             trigger: astrRef.current,
             start: "top 60%",
             end: "top 30%",
-
-            markers: true,
           },
         }
       );
@@ -58,8 +56,6 @@ const Aboutsection = () => {
           trigger: astrRef.current,
           start: "top 40%",
           end: "top 30%",
-
-          markers: true,
         },
       }
     );

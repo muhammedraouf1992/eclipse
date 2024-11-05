@@ -30,8 +30,6 @@ const ServicesSection = () => {
           trigger: astrRef.current,
           start: "top 70%",
           end: "top 30%",
-
-          markers: true,
         },
       }
     );
