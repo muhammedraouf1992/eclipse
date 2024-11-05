@@ -1,0 +1,48 @@
+"use client";
+import React, { useRef } from "react";
+import moon from "@/public/heromoon.webp";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+const MoonComponent = () => {
+  const moonRef = useRef(null);
+  const bgRef = useRef(null);
+  useGSAP(() => {
+    if (moonRef.current) {
+      gsap.to(moonRef.current, {
+        rotation: 360,
+        duration: 500,
+        repeat: -1,
+        ease: "linear",
+      });
+    }
+    gsap.to(bgRef.current, {
+      opacity: 0.3, // Glow visibility (0 to 1 range)
+      scale: 1.05, // Slight scaling for pulsing effect
+      duration: 3, // Duration for each glow pulse
+      repeat: -1, // Infinite repeat
+      yoyo: true, // Back and forth for pulsing effect
+      ease: "power1.inOut", // Smooth easing
+    });
+  }, []);
+  return (
+    <>
+      <Image
+        ref={moonRef}
+        src={moon}
+        width={800}
+        height={800}
+        sizes="(min-width: 860px) 800px, calc(92.59vw + 22px)"
+        alt="moon picture"
+        className="absolute z-10 right-0 -bottom-52 lg:right-[50%] lg:translate-x-[50%] lg:-bottom-[100%] lg:scale-[1.8]"
+        priority
+      />
+      <div
+        ref={bgRef}
+        className="absolute lg:right-[50%] hidden lg:block lg:translate-x-[50%] lg:-bottom-[100%] rounded-full lg:w-[920px] lg:h-[920px] bg-white/50 blur-2xl"
+      />
+    </>
+  );
+};
+
+export default MoonComponent;

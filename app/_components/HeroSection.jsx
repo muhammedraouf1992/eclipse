@@ -1,22 +1,12 @@
-"use client";
-import Image from "next/image";
 import React from "react";
 
-import moon from "@/public/heromoon.webp";
+import MoonComponent from "./MoonComponent";
 
 const HeroSection = () => {
   return (
     <section className="mb-[20rem] lg:container lg:mx-auto">
       <div className="px-5 lg:px-0 h-[65vh] lg:h-[70vh] mb-10 relative flex">
-        <Image
-          src={moon}
-          width={800}
-          height={800}
-          sizes="(min-width: 860px) 800px, calc(92.59vw + 22px)"
-          alt="moon picture"
-          className="absolute z-10 right-0 -bottom-52 lg:right-[50%] lg:translate-x-[50%] lg:-bottom-[100%] lg:scale-[1.8]"
-          priority
-        />
+        <MoonComponent />
 
         <div className="max-w-2xl mt-24">
           <div className="flex items-center gap-5">
