@@ -12,7 +12,7 @@ const ServicesPage = async ({ params }) => {
   });
   console.log(service);
   return (
-    <div className="pt-20 lg:pt-40">
+    <div className="pt-40 lg:pt-40">
       <div>
         <Image
           src={service.imgUrl}
@@ -22,13 +22,15 @@ const ServicesPage = async ({ params }) => {
           className="w-full object-fit"
         />
       </div>
-      <div className="-mt-28 mb-20">
-        <h1 className="text-center text-[140px] uppercase">{service.title}</h1>
+      <div className="mt-5 lg:-mt-28 mb-20">
+        <h1 className="text-6xl text-center lg:text-[140px] uppercase">
+          {service.title}
+        </h1>
         <p className="text-md text-center uppercase font-bold">
           Eclipse agency
         </p>
       </div>
-      <div className="grid grid-cols-3 relative">
+      <div className="grid grid-cols-1 lg:grid-cols-3 relative">
         {service.Project.length > 0 ? (
           service.Project.map((project) => (
             <div
