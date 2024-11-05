@@ -14,6 +14,7 @@ const HeroSection = () => {
           height={800}
           alt="moon picture"
           className="absolute z-10 right-0 -bottom-52 lg:right-[50%] lg:translate-x-[50%] lg:-bottom-[100%] lg:scale-[1.8]"
+          priority
         />
 
         <div className="max-w-2xl mt-24">
