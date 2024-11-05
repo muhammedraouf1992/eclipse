@@ -27,6 +27,7 @@ const MoonComponent = () => {
     });
     gsap.to(blackRef.current, {
       opacity: 0, // Glow visibility (0 to 1 range)
+      display: "none",
       duration: 3, // Duration for each glow pulse
       ease: "power1.inOut", // Smooth easing
     });
@@ -40,13 +41,14 @@ const MoonComponent = () => {
         height={800}
         sizes="(min-width: 860px) 800px, calc(92.59vw + 22px)"
         alt="moon picture"
-        className="absolute z-10 right-0 -bottom-52 lg:right-[50%] lg:translate-x-[50%] lg:-bottom-[100%] lg:scale-[1.8]"
+        className="absolute z-10 right-0 -bottom-52 lg:right-[50%] lg:translate-x-[50%] lg:-bottom-[100%] lg:scale-[1.8] "
         priority
       />
       <div
         ref={bgRef}
         className="absolute lg:right-[50%] hidden lg:block lg:translate-x-[50%] lg:-bottom-[100%] rounded-full lg:w-[920px] lg:h-[920px] bg-white/50 blur-2xl"
       />
+      <div />
       <div
         className="fixed top-0 left-0 right-0 bottom-0 bg-black z-[100]"
         ref={blackRef}

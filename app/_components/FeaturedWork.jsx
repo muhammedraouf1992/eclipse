@@ -54,7 +54,6 @@ const FeaturedWork = () => {
           trigger: astraRef2.current,
           start: "top 70%",
           end: "top 30%",
-          markers: true,
         },
       }
     );
