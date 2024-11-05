@@ -7,6 +7,7 @@ import gsap from "gsap";
 const MoonComponent = () => {
   const moonRef = useRef(null);
   const bgRef = useRef(null);
+  const blackRef = useRef(null);
   useGSAP(() => {
     if (moonRef.current) {
       gsap.to(moonRef.current, {
@@ -22,6 +23,11 @@ const MoonComponent = () => {
       duration: 3, // Duration for each glow pulse
       repeat: -1, // Infinite repeat
       yoyo: true, // Back and forth for pulsing effect
+      ease: "power1.inOut", // Smooth easing
+    });
+    gsap.to(blackRef.current, {
+      opacity: 0, // Glow visibility (0 to 1 range)
+      duration: 3, // Duration for each glow pulse
       ease: "power1.inOut", // Smooth easing
     });
   }, []);
@@ -40,6 +46,10 @@ const MoonComponent = () => {
       <div
         ref={bgRef}
         className="absolute lg:right-[50%] hidden lg:block lg:translate-x-[50%] lg:-bottom-[100%] rounded-full lg:w-[920px] lg:h-[920px] bg-white/50 blur-2xl"
+      />
+      <div
+        className="fixed top-0 left-0 right-0 bottom-0 bg-black z-[100]"
+        ref={blackRef}
       />
     </>
   );

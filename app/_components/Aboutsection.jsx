@@ -1,12 +1,76 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import aboutImg from "@/public/about.png";
 import Image from "next/image";
 import ServicesSection from "./ServicesSection";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 const Aboutsection = () => {
+  const astrRef = useRef(null);
+  useGSAP(() => {
+    if (astrRef.current) {
+      gsap.fromTo(
+        astrRef.current,
+        {
+          opacity: 0,
+          duration: 1,
+          translateX: -50,
+          translateY: -10,
+          rotation: -2,
+          ease: "linear",
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          translateX: -0,
+          translateY: -0,
+          rotation: 0,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: astrRef.current,
+            start: "top 60%",
+            end: "top 30%",
+
+            markers: true,
+          },
+        }
+      );
+    }
+    gsap.fromTo(
+      gsap.utils.toArray(".stagger-text"),
+      {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power3.out",
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: astrRef.current,
+          start: "top 40%",
+          end: "top 30%",
+
+          markers: true,
+        },
+      }
+    );
+  }, []);
   return (
     <section className="pt-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 mb-10 lg:mb-0">
-        <div className="flex justify-center items-center">
+        <div
+          className="flex justify-center items-center opacity-0"
+          ref={astrRef}
+        >
           <Image
             src={aboutImg}
             width={"450"}
@@ -15,17 +79,18 @@ const Aboutsection = () => {
             alt="about image"
           />
         </div>
+
         <div className="flex flex-col justify-center gap-10">
-          <h3 className="text-4xl lg:text-7xl">
+          <h3 className="text-4xl lg:text-7xl stagger-text">
             Marketing by professional team.
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
-            <p className="text-xl">
+            <p className="text-xl stagger-text">
               <span className="font-bold">Strategical</span> marketing
               <br />
               excellency
             </p>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-lg stagger-text">
               Consumers today rely heavily on digital means to research
               products. We research a brand of bldend engaging with it,
               according to the meanwhile, 51% of consumers
