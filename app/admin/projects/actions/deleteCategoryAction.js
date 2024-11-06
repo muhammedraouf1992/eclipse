@@ -1,13 +1,14 @@
 "use server";
+import { deleteImage } from "@/lib/imageActions";
 import prisma from "@/prismaClient";
-import fs from "fs/promises";
 
 import { revalidatePath } from "next/cache";
-import path from "path";
-export const deleteCategoryAction = async (category) => {
-  const filePath = path.join(process.cwd(), "public", category.imgUrl);
 
-  fs.unlink(filePath);
+export const deleteCategoryAction = async (category) => {
+  if (category.imgUrl) {
+    const publicId = category.imgUrl.split("/").pop().split(".")[0];
+    await deleteImage(publicId);
+  }
 
   await prisma.projectCategory.delete({ where: { id: category.id } });
 

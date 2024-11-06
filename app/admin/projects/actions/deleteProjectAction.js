@@ -1,21 +1,22 @@
 "use server";
 
+import { deleteImage } from "@/lib/imageActions";
 import prisma from "@/prismaClient";
-import fs from "fs/promises";
+
 import { revalidatePath } from "next/cache";
-import path from "path";
 
 export const deleteProject = async (project) => {
-  const filePath = path.join(process.cwd(), "public", project.imgUrl);
-
-  await fs.unlink(filePath);
-
-  await Promise.all(
-    project.gridImgs.split(",").map(async (img) => {
-      const filePath = path.join(process.cwd(), "public", img);
-      await fs.unlink(filePath);
-    })
-  );
+  if (project.imgUrl) {
+    const publicId = project.imgUrl.split("/").pop().split(".")[0];
+    await deleteImage(publicId);
+  }
+  if (project.gridImgs) {
+    await Promise.all(
+      project.gridImgs.split(",").map(async (img) => {
+        await deleteImage(img);
+      })
+    );
+  }
 
   await prisma.project.delete({ where: { id: project.id } });
   revalidatePath("admin/projects", "page");

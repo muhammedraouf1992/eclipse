@@ -1,12 +1,13 @@
 "use server";
 
+import {
+  deleteImage,
+  uploadImages,
+  uploadSingleImage,
+} from "@/lib/imageActions";
 import { editProjectSchema } from "@/lib/validationSchema";
 import prisma from "@/prismaClient";
-
-import { randomUUID } from "crypto";
-import fs from "fs/promises";
 import { revalidatePath } from "next/cache";
-import path from "path";
 
 export const editProjectAction = async (formData, project) => {
   const newData = Object.fromEntries(formData.entries());
@@ -23,31 +24,16 @@ export const editProjectAction = async (formData, project) => {
   let newFilePath = project.imgUrl;
 
   if (data.imgUrl) {
-    const filePath = path.join(process.cwd(), "public", project.imgUrl);
+    newFilePath = await uploadSingleImage(data.imgUrl);
 
-    await fs.unlink(filePath);
-
-    newFilePath = `/projects/${randomUUID()}-banner-${data.imgUrl.name}`;
-
-    fs.writeFile(
-      `public${newFilePath}`,
-      Buffer.from(await data.imgUrl.arrayBuffer())
-    );
+    const publicId = project.imgUrl.split("/").pop().split(".")[0];
+    await deleteImage(publicId);
   }
 
-  let imgArray = [];
+  let urls = [];
 
   if (data.gridImgs) {
-    await Promise.all(
-      data.gridImgs.map(async (img) => {
-        const filePath = `/projects/${randomUUID()}-grid-${img.name}`;
-        await fs.writeFile(
-          `public${filePath}`,
-          Buffer.from(await img.arrayBuffer())
-        );
-        imgArray.push(filePath);
-      })
-    );
+    urls = await uploadImages(data.gridImgs);
   }
 
   await prisma.project.update({
@@ -60,7 +46,7 @@ export const editProjectAction = async (formData, project) => {
       description: data.description,
       categoryId: data.categoryId,
       imgUrl: newFilePath,
-      gridImgs: project.gridImgs + "," + imgArray.join(","),
+      gridImgs: project.gridImgs + "," + urls.join(","),
     },
   });
   revalidatePath("/admin/projects", "page");

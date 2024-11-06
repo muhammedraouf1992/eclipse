@@ -30,7 +30,7 @@ import { editProjectSchema } from "@/lib/validationSchema";
 import Image from "next/image";
 
 import { Textarea } from "@/components/ui/textarea";
-import { editCategoryAction } from "../actions/editCategoryAction";
+
 import { XCircle } from "lucide-react";
 import { deleteProjectImg } from "../actions/deleteProjectImg";
 import { editProjectAction } from "../actions/editProjectAction";

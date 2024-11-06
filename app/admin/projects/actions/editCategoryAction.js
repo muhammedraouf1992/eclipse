@@ -1,11 +1,11 @@
 "use server";
-import fs from "fs/promises";
+
 import { editCategorySchema } from "@/lib/validationSchema";
 
-import path from "path";
 import { revalidatePath } from "next/cache";
 import { convertToKebabCase } from "@/lib/utils";
 import prisma from "@/prismaClient";
+import { deleteImage, uploadSingleImage } from "@/lib/imageActions";
 
 export const editCategoryAction = async (formData, category) => {
   const newData = Object.fromEntries(formData.entries());
@@ -16,19 +16,14 @@ export const editCategoryAction = async (formData, category) => {
   }
   const data = results.data;
 
-  let filePath = category.imgUrl;
+  let imgUrl = category.imgUrl;
 
   if (data.imgUrl) {
-    filePath = `/category/${crypto.randomUUID()}-${data.imgUrl.name}`;
-
-    await fs.writeFile(
-      `public/${filePath}`,
-      Buffer.from(await data.imgUrl.arrayBuffer())
-    );
-
-    const deleteImgPath = path.join(process.cwd(), "public", category.imgUrl);
-
-    await fs.unlink(deleteImgPath);
+    imgUrl = await uploadSingleImage(data.imgUrl);
+    if (category.imgUrl) {
+      const publicId = category.imgUrl.split("/").pop().split(".")[0];
+      await deleteImage(publicId);
+    }
   }
 
   const dataSlug = convertToKebabCase(data.slug);
@@ -41,7 +36,7 @@ export const editCategoryAction = async (formData, category) => {
       title: data.title,
       slug: dataSlug,
       description: data.description,
-      imgUrl: filePath,
+      imgUrl: imgUrl,
     },
   });
   revalidatePath("/admin/blogs", "page");

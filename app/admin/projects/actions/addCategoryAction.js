@@ -6,6 +6,7 @@ import { addProjectCategorySchema } from "@/lib/validationSchema";
 import { revalidatePath } from "next/cache";
 import { convertToKebabCase } from "@/lib/utils";
 import prisma from "@/prismaClient";
+import { uploadSingleImage } from "@/lib/imageActions";
 
 export const addProjectCategory = async (formData) => {
   const newData = Object.fromEntries(formData.entries());
@@ -18,14 +19,7 @@ export const addProjectCategory = async (formData) => {
   }
   const { data } = parsedData;
 
-  await fs.mkdir("public/category", { recursive: true });
-
-  const filePath = `/category/${crypto.randomUUID()}-${data.imgUrl.name}`;
-
-  fs.writeFile(
-    `public${filePath}`,
-    Buffer.from(await data.imgUrl.arrayBuffer())
-  );
+  const url = await uploadSingleImage(data.imgUrl);
 
   const dataSlug = convertToKebabCase(data.slug);
 
@@ -33,7 +27,7 @@ export const addProjectCategory = async (formData) => {
     data: {
       title: data.title,
       slug: dataSlug,
-      imgUrl: filePath,
+      imgUrl: url,
       description: data.description,
     },
   });

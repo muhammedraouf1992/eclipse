@@ -1,9 +1,10 @@
 "use server";
 
+import { uploadSingleImage } from "@/lib/imageActions";
 import { convertToKebabCase } from "@/lib/utils";
 import { formSchema } from "@/lib/validationSchema";
 import prisma from "@/prismaClient";
-import fs from "fs/promises";
+// import fs from "fs/promises";
 import { revalidatePath } from "next/cache";
 
 export const addBlogAction = async (formData) => {
@@ -15,14 +16,16 @@ export const addBlogAction = async (formData) => {
   }
   const data = results.data;
 
-  await fs.mkdir("public/blogs", { recursive: true });
+  // await fs.mkdir("public/blogs", { recursive: true });
 
-  const filePath = `/blogs/${crypto.randomUUID()}-${data.image.name}`;
+  // const filePath = `/blogs/${crypto.randomUUID()}-${data.image.name}`;
 
-  await fs.writeFile(
-    `public/${filePath}`,
-    Buffer.from(await data.image.arrayBuffer())
-  );
+  // await fs.writeFile(
+  //   `public/${filePath}`,
+  //   Buffer.from(await data.image.arrayBuffer())
+  // );
+
+  const url = await uploadSingleImage(data.image);
 
   const dataSlug = convertToKebabCase(data.slug);
 
@@ -31,7 +34,7 @@ export const addBlogAction = async (formData) => {
       title: data.title,
       slug: dataSlug,
       content: data.content,
-      imgUrl: filePath,
+      imgUrl: url,
     },
   });
   revalidatePath("/admin/blog", "page");

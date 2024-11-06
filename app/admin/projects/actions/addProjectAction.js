@@ -1,12 +1,12 @@
 "use server";
 
+import { uploadImages, uploadSingleImage } from "@/lib/imageActions";
 import { convertToKebabCase } from "@/lib/utils";
 import { addProjectSchema } from "@/lib/validationSchema";
 import prisma from "@/prismaClient";
 
-import { randomUUID } from "crypto";
-import fs from "fs/promises";
 import { revalidatePath } from "next/cache";
+
 export const addProjectAction = async (formData) => {
   const newData = Object.fromEntries(formData.entries());
 
@@ -17,27 +17,9 @@ export const addProjectAction = async (formData) => {
   const parsedData = addProjectSchema.safeParse(newData);
   const { data } = parsedData;
 
-  await fs.mkdir("public/projects", { recursive: true });
+  const url = await uploadSingleImage(data.imgUrl);
 
-  const filePath = `/projects/${randomUUID()}-banner-${data.imgUrl.name}`;
-
-  fs.writeFile(
-    `public${filePath}`,
-    Buffer.from(await data.imgUrl.arrayBuffer())
-  );
-
-  let imgArray = [];
-
-  await Promise.all(
-    data.gridImgs.map(async (img) => {
-      const filePath = `/projects/${randomUUID()}-grid-${img.name}`;
-      await fs.writeFile(
-        `public${filePath}`,
-        Buffer.from(await img.arrayBuffer())
-      );
-      imgArray.push(filePath);
-    })
-  );
+  const urls = await uploadImages(data.gridImgs);
 
   const projectSlug = convertToKebabCase(data.slug);
 
@@ -46,8 +28,8 @@ export const addProjectAction = async (formData) => {
       title: data.title,
       slug: projectSlug,
       description: data.description,
-      imgUrl: filePath,
-      gridImgs: imgArray.join(","),
+      imgUrl: url,
+      gridImgs: urls.join(","),
       categoryId: data.categoryId,
     },
   });

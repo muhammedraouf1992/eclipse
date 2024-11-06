@@ -1,11 +1,11 @@
 "use server";
-import fs from "fs/promises";
+
 import { editBlogSchema } from "@/lib/validationSchema";
 
-import path from "path";
 import { revalidatePath } from "next/cache";
 import { convertToKebabCase } from "@/lib/utils";
 import prisma from "@/prismaClient";
+import { deleteImage, uploadSingleImage } from "@/lib/imageActions";
 
 export const editBlogAction = async (formData, blog) => {
   const newData = Object.fromEntries(formData.entries());
@@ -16,19 +16,15 @@ export const editBlogAction = async (formData, blog) => {
   }
   const data = results.data;
 
-  let filePath = blog.imgUrl;
+  let imageUrl = blog.imgUrl;
 
   if (data.image) {
-    filePath = `/blogs/${crypto.randomUUID()}-${data.image.name}`;
+    imageUrl = await uploadSingleImage(data.image);
 
-    await fs.writeFile(
-      `public/${filePath}`,
-      Buffer.from(await data.image.arrayBuffer())
-    );
-
-    const deleteImgPath = path.join(process.cwd(), "public", blog.imgUrl);
-
-    await fs.unlink(deleteImgPath);
+    const publicId = blog?.imgUrl?.split("/").pop().split(".")[0];
+    if (publicId) {
+      await deleteImage(publicId);
+    }
   }
 
   const dataSlug = convertToKebabCase(data.slug);
@@ -41,7 +37,7 @@ export const editBlogAction = async (formData, blog) => {
       title: data.title,
       slug: dataSlug,
       content: data.content,
-      imgUrl: filePath,
+      imgUrl: imageUrl,
     },
   });
   revalidatePath("/admin/blogs", "page");

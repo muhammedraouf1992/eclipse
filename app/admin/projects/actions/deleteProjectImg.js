@@ -1,15 +1,11 @@
 "use server";
 
+import { deleteImage } from "@/lib/imageActions";
 import prisma from "@/prismaClient";
-import fs from "fs/promises";
-import path from "path";
 
 export const deleteProjectImg = async (gridImgsStr, project, img) => {
-  console.log("gridImgsStr");
-  console.log(gridImgsStr);
-
-  const filePath = path.join(process.cwd(), "public", img);
-  await fs.unlink(filePath);
+  const publicId = img.split("/").pop().split(".")[0];
+  await deleteImage(publicId);
 
   await prisma.project.update({
     where: { id: project.id },
