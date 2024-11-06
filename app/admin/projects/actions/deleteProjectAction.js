@@ -13,7 +13,8 @@ export const deleteProject = async (project) => {
   if (project.gridImgs) {
     await Promise.all(
       project.gridImgs.split(",").map(async (img) => {
-        await deleteImage(img);
+        const publicId = img.split("/").pop().split(".")[0];
+        await deleteImage(publicId);
       })
     );
   }
