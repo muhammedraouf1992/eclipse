@@ -1,4 +1,5 @@
 "use server";
+import { deleteImage } from "@/lib/imageActions";
 // import path from "path";
 import prisma from "@/prismaClient";
 import { revalidatePath } from "next/cache";
