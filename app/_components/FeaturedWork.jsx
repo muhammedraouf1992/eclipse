@@ -18,7 +18,7 @@ const FeaturedWork = () => {
     gsap.fromTo(
       astraRef1.current,
       {
-        x: -10,
+        x: -30,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
@@ -39,7 +39,7 @@ const FeaturedWork = () => {
     gsap.fromTo(
       astraRef2.current,
       {
-        x: 10,
+        x: 30,
         opacity: 0,
         duration: 1,
         ease: "power3.out",

@@ -25,7 +25,7 @@ export default function ProjectTable({ projects }) {
         <TableRow>
           <TableHead className="w-[200px]">Title</TableHead>
           <TableHead>slug</TableHead>
-          <TableHead>category name</TableHead>
+          <TableHead>project name</TableHead>
           <TableHead>Banner image</TableHead>
           <TableHead>actions</TableHead>
         </TableRow>
