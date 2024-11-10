@@ -23,10 +23,10 @@ const HeroSection = () => {
                 fill="white"
               ></path>
             </svg>
-            <p className="text-xl uppercase">Marketing Agency</p>
+            <p className="text-xl uppercase ">Marketing Agency</p>
           </div>
           <div className="my-10">
-            <h2 className="text-5xl lg:text-8xl font-extrabold">
+            <h2 className="text-5xl lg:text-8xl font-extrabold ">
               We help <br />
               to <span className="font-normal">grow your startup</span>
             </h2>
