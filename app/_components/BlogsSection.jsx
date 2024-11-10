@@ -15,7 +15,7 @@ const BlogsSection = async ({ variant }) => {
     <section className="grid grid-cols-1 lg:grid-cols-[1fr,2.5fr] gap-20">
       <div className="px-10">
         <h2 className="text-6xl mb-5">
-          <span className="font-bold">Journals</span> from the axtra
+          <span className="font-bold">Journals</span> from the Eclipse
         </h2>
         {variant != "page" && (
           <CustomBtn variant={"primary"} text={"View more blogs"} />

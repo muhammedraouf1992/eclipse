@@ -36,47 +36,45 @@ const ServicesSection = () => {
   }, []);
   return (
     <div ref={astrRef}>
+      {/*  Branding */}
       <div className="grid grid-cols-1 gap-2 lg:grid-cols-[1fr,1fr,0.5fr] py-5 px-0 lg:py-16 lg:px-14 border-t border-t-white/20 group customBackground stagger-card">
-        <h4 className="text-xl lg:text-3xl font-bold">
-          Search Engine <br />
-          <span className="font-normal">Optimization</span>
-        </h4>
+        <h4 className="text-xl lg:text-3xl font-bold">Branding</h4>
         <div>
           <p className="lg:max-w-[300px] text-gray-400 text-lg group-hover:text-white">
-            we approach each project with meticulous attention to detail and
-            best quality.
+            We build unique brand identities that capture your essence, resonate
+            with your audience, and set you apart in a competitive market.
           </p>
         </div>
         <div>
           <CustomBtn variant={"outline"} text={"Explore service"} />
         </div>
       </div>
-      {/* 2 */}
+      {/*   Social Media */}
       <div className="grid grid-cols-1 gap-2 lg:grid-cols-[1fr,1fr,0.5fr] py-5 px-0 lg:py-16 lg:px-14 border-t border-t-white/20 group customBackground stagger-card">
         <h4 className="text-xl lg:text-3xl font-bold">
-          Search Engine <br />
-          <span className="font-normal">Optimization</span>
+          Social Media <br />
+          <span className="font-normal">Management</span>
         </h4>
         <div>
           <p className="lg:max-w-[300px] text-gray-400 text-lg group-hover:text-white">
-            we approach each project with meticulous attention to detail and
-            best quality.
+            From strategy to execution, we create and manage impactful social
+            media campaigns that drive engagement and growth.
           </p>
         </div>
         <div>
           <CustomBtn variant={"outline"} text={"Explore service"} />
         </div>
       </div>
-      {/* 3 */}
+      {/* Search Engine */}
       <div className="grid grid-cols-1 gap-2 lg:grid-cols-[1fr,1fr,0.5fr] py-5 px-0 lg:py-16 lg:px-14 border-t border-t-white/20 group customBackground stagger-card">
         <h4 className="text-xl lg:text-3xl font-bold">
           Search Engine <br />
-          <span className="font-normal">Optimization</span>
+          <span className="font-normal"> Optimization (SEO)</span>
         </h4>
         <div>
           <p className="lg:max-w-[300px] text-gray-400 text-lg group-hover:text-white">
-            we approach each project with meticulous attention to detail and
-            best quality.
+            Boost your online visibility with our tailored SEO strategies that
+            improve rankings, attract organic traffic, and grow your business.
           </p>
         </div>
         <div>
@@ -84,16 +82,32 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {/* 4 */}
+      {/* Web & App */}
       <div className="grid grid-cols-1 gap-2 lg:grid-cols-[1fr,1fr,0.5fr] py-5 px-0 lg:py-16 lg:px-14 border-t border-t-white/20 group customBackground stagger-card">
         <h4 className="text-xl lg:text-3xl font-bold">
-          Search Engine <br />
-          <span className="font-normal">Optimization</span>
+          Web & App <br />
+          <span className="font-normal">Development</span>
         </h4>
         <div>
           <p className="lg:max-w-[300px] text-gray-400 text-lg group-hover:text-white">
-            we approach each project with meticulous attention to detail and
-            best quality.
+            Crafting seamless websites and apps that combine functionality,
+            aesthetics, and user experience to elevate your digital presence.
+          </p>
+        </div>
+        <div>
+          <CustomBtn variant={"outline"} text={"Explore service"} />
+        </div>
+      </div>
+
+      {/* Production & Animation */}
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-[1fr,1fr,0.5fr] py-5 px-0 lg:py-16 lg:px-14 border-t border-t-white/20 group customBackground stagger-card">
+        <h4 className="text-xl lg:text-3xl font-bold">
+          Production & <br /> Animation
+        </h4>
+        <div>
+          <p className="lg:max-w-[300px] text-gray-400 text-lg group-hover:text-white">
+            Bring your ideas to life with captivating visual storytelling
+            through high-quality video production and dynamic animations.
           </p>
         </div>
         <div>

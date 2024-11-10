@@ -37,77 +37,60 @@ const Slider = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper !py-10"
       >
-        <SwiperSlide>
+        <SwiperSlide className="relative">
           <Image
             src={slider1}
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             alt="slider image"
-            sizes="400px"
+            sizes="
+            500px"
           />
+          <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
+            branding
+          </h4>
         </SwiperSlide>
-        <SwiperSlide>
+
+        <SwiperSlide className="relative">
           <Image
             src={slider2}
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             alt="slider image"
-            sizes="400px"
+            sizes="
+            500px"
           />
+          <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
+            production
+          </h4>
         </SwiperSlide>
-        <SwiperSlide>
+
+        <SwiperSlide className="relative">
           <Image
             src={slider3}
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             alt="slider image"
-            sizes="400px"
+            sizes="
+            500px"
           />
+          <h4 className="absolute bottom-10 left-5 text-2xl capitalize">
+            webs & apps development
+          </h4>
         </SwiperSlide>
-        <SwiperSlide>
+
+        <SwiperSlide className="relative">
           <Image
             src={slider4}
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             alt="slider image"
-            sizes="400px"
+            sizes="
+            500px"
           />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={slider4}
-            width={400}
-            height={400}
-            alt="slider image"
-            sizes="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={slider1}
-            width={400}
-            height={400}
-            alt="slider image"
-            sizes="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={slider4}
-            width={400}
-            height={400}
-            alt="slider image"
-            sizes="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={slider2}
-            width={400}
-            height={400}
-            alt="slider image"
-            sizes="400px"
-          />
+          <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
+            digital marketing
+          </h4>
         </SwiperSlide>
       </Swiper>
     </div>

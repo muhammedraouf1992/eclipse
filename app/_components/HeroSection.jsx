@@ -23,12 +23,12 @@ const HeroSection = () => {
                 fill="white"
               ></path>
             </svg>
-            <p className="text-xl uppercase ">Marketing Agency</p>
+            <p className="text-xl uppercase ">ECLIPSE AGENCY</p>
           </div>
           <div className="my-10">
             <h2 className="text-5xl lg:text-8xl font-extrabold ">
-              We help <br />
-              to <span className="font-normal">grow your startup</span>
+              Empowering <br />
+              <span className="font-normal">business Solution</span>
             </h2>
           </div>
         </div>

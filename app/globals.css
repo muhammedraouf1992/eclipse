@@ -4,7 +4,7 @@
 
 body {
   background-color: #121212;
-  @apply font-jakarta;
+  @apply font-exo;
 }
 
 ::-webkit-scrollbar {

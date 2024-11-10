@@ -3,15 +3,17 @@ import React from "react";
 import customImg from "@/public/customImg.jpg";
 const DriveIntoSection = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] items-center my-20">
-      <h5 className="text-3xl lg:text-6xl">
+    <section className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] items-center my-20 gap-2">
+      <h5 className="text-2xl  lg:text-4xl leading-[1.4em] order-2 lg:order-1">
         <span className="font-bold">
-          We drive into your business dream in order
+          We dive into your business goals to unlock growth, boost revenue,
         </span>{" "}
-        to bring to the surface of underlying value that your brand creates for
-        its customers.
+        and enhance your brand's visibility. By focusing on innovative marketing
+        strategies, customer-centric solutions, and delivering excellence, we
+        help you stand out in a competitive digital landscape and achieve
+        measurable results.
       </h5>
-      <div className="relative w-full h-[400px] my-10 lg:my-0 lg:h-[500px]">
+      <div className="relative w-full h-[400px] my-10 lg:my-0 lg:h-[500px] order-1 lg:order-2">
         <Image
           src={customImg}
           fill

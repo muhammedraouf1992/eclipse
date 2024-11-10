@@ -78,18 +78,20 @@ const Aboutsection = () => {
 
         <div className="flex flex-col justify-center gap-10">
           <h3 className="text-4xl lg:text-7xl stagger-text">
-            Marketing by professional team.
+            Shape The Digital Universe
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <p className="text-xl stagger-text">
-              <span className="font-bold">Strategical</span> marketing
+              <span className="font-bold">We don't just </span>
               <br />
-              excellency
+              create solutions
             </p>
             <p className="text-gray-400 text-lg stagger-text">
-              Consumers today rely heavily on digital means to research
-              products. We research a brand of bldend engaging with it,
-              according to the meanwhile, 51% of consumers
+              we craft experiences. Our passion lies in transforming bold ideas
+              into groundbreaking digital realities. With a focus on innovation
+              and strategic vision, we deliver tailored strategies that connect,
+              engage, and inspire. Let&apos;s redefine what&apos;s possible and
+              position your brand at the forefront of the digital age.
             </p>
           </div>
         </div>

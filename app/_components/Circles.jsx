@@ -40,36 +40,36 @@ const Circles = () => {
     >
       <div className="border rounded-lg lg:rounded-full lg:-ml-20 border-white/20 ">
         <div className="py-10 lg:py-0 lg:w-[400px] lg:h-[400px] flex flex-col items-center justify-center astraRef">
-          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">25K</p>
+          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">15+ </p>
           <p className="text-lg lg:text-xl text-center">
-            <span className="font-bold"> Project</span> <br /> completed
+            <span className="font-bold"> Years </span> <br /> of Expertise
           </p>
         </div>
       </div>
 
       <div className="border rounded-lg lg:rounded-full lg:-ml-20 border-white/20 ">
         <div className="py-10 lg:py-0 lg:w-[400px] lg:h-[400px] flex flex-col items-center justify-center astraRef">
-          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">25K</p>
+          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">100+</p>
           <p className="text-lg lg:text-xl text-center">
-            <span className="font-bold"> Project</span> <br /> completed
+            <span className="font-bold"> Happy </span> <br /> Clients
           </p>
         </div>
       </div>
 
       <div className="border rounded-lg lg:rounded-full lg:-ml-20 border-white/20 ">
         <div className="py-10 lg:py-0 lg:w-[400px] lg:h-[400px] flex flex-col items-center justify-center astraRef">
-          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">25K</p>
+          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">500+</p>
           <p className="text-lg lg:text-xl text-center">
-            <span className="font-bold"> Project</span> <br /> completed
+            <span className="font-bold"> Successful </span> <br /> Campaigns
           </p>
         </div>
       </div>
 
       <div className="border rounded-lg lg:rounded-full lg:-ml-20 border-white/20 ">
         <div className="py-10 lg:py-0 lg:w-[400px] lg:h-[400px] flex flex-col items-center justify-center astraRef">
-          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">25K</p>
+          <p className="mb-3 lg:mb-0 text-5xl lg:text-8xl">50+</p>
           <p className="text-lg lg:text-xl text-center">
-            <span className="font-bold"> Project</span> <br /> completed
+            <span className="font-bold"> Industries </span> <br /> Served
           </p>
         </div>
       </div>

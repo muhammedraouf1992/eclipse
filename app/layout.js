@@ -1,10 +1,10 @@
 import "./globals.css";
 
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 
-const jakarta = Plus_Jakarta_Sans({
+const exo = Exo_2({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-exo",
   weight: ["400", "700"],
 });
 
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${jakarta.variable} antialiased bg-black text-white`}>
+      <body className={`${exo.variable} antialiased bg-black text-white`}>
         {children}
       </body>
     </html>

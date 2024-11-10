@@ -37,8 +37,8 @@ const MoonComponent = () => {
       <Image
         ref={moonRef}
         src={moon}
-        width={800}
-        height={800}
+        width={700}
+        height={700}
         sizes="(min-width: 860px) 800px, calc(92.59vw + 22px)"
         alt="moon picture"
         className="absolute z-10 right-0 -bottom-52 lg:right-[50%] lg:translate-x-[50%] lg:-bottom-[100%] lg:scale-[1.8] "
@@ -46,7 +46,7 @@ const MoonComponent = () => {
       />
       <div
         ref={bgRef}
-        className="absolute lg:right-[50%] hidden lg:block lg:translate-x-[50%] lg:-bottom-[100%] rounded-full lg:w-[920px] lg:h-[920px] bg-white/50 blur-2xl"
+        className="absolute lg:right-[50%] hidden lg:block lg:translate-x-[50%] lg:-bottom-[100%] rounded-full lg:w-[820px] lg:h-[820px] bg-white/50 blur-2xl"
       />
       <div />
       <div

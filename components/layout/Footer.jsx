@@ -24,27 +24,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-10 py-10 border-b border-t border-white/30 mt-20">
           <div>
             <h6 className="text-2xl">Egypt, Cairo</h6>
-            <p className="text-white/40 my-4">
-              Lorem ipsum dolor sit amet consectetur.
-            </p>
           </div>
           <div>
             <h6 className="text-2xl">Saudi Arabia, Riyadh</h6>
-            <p className="text-white/40 my-4">
-              Lorem ipsum dolor sit amet consectetur.
-            </p>
           </div>
           <div>
             <h6 className="text-2xl">United Arab of Emirates, Abu Dhabi</h6>
-            <p className="text-white/40 my-4">
-              Lorem ipsum dolor sit amet consectetur.
-            </p>
           </div>
           <div>
             <h6 className="text-2xl">Italy, Milano City</h6>
-            <p className="text-white/40 my-4">
-              Lorem ipsum dolor sit amet consectetur.
-            </p>
           </div>
         </div>
         {/* copywrites */}

@@ -66,7 +66,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        jakarta: "var(--font-jakarta)",
+        exo: "var(--font-exo)",
       },
       boxShadow: {
         yellow: "23px 34px 42px -6px rgba(217,78,3,0.2)",

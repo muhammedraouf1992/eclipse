@@ -4,7 +4,7 @@ import img from "@/public/customImg.jpg";
 const LearnSection = () => {
   return (
     <section className="grid grid-cols-1 gap-5 lg:grid-cols-[1.5fr,0.8fr] lg:gap-20 items-center">
-      <div className="flex flex-col-reverse lg:flex-row lg:items-center gap-10">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-10">
         <div>
           <Image
             src={img}
@@ -15,17 +15,19 @@ const LearnSection = () => {
           />
         </div>
         <div className="">
-          <h2 className="text-4xl lg:text-[110px] leading-[1em]">
-            Learn.
-            <br /> Make <br />
-            &Build
+          <h2 className="text-2xl lg:text-[60px] leading-[1.2em]">
+            EMPOWERING
+            <br /> BUSINESS <br />
+            SOLUTION
           </h2>
         </div>
       </div>
 
       <div className="lg:p-20">
         <p className="text-gray-300 capitalize text-lg">
-          We employ a flexible marketing approach that upgrade your productivity
+          Driving growth and innovation with tailored strategies, empowering
+          businesses to achieve success and thrive in today's competitive
+          landscape.
         </p>
       </div>
     </section>
