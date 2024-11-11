@@ -27,7 +27,7 @@ const DesktopNavbar = ({ categories }) => {
         {/* <SignInForm /> */}
       </div>
       <div>
-        <ul className="flex gap-10 font-jakarta">
+        <ul className="flex gap-10">
           <li className="hover:text-primary">
             <Link href={"/"}>Home</Link>
           </li>

@@ -1,7 +1,9 @@
 import React from "react";
-import Slider from "./Slider";
+
 import CustomBtn from "@/components/layout/CustomBtn";
 import FeaturedWork from "./FeaturedWork";
+import dynamic from "next/dynamic";
+const SwiperComponent = dynamic(() => import("./Slider"), { ssr: false });
 
 const PortfolioSection = () => {
   return (
@@ -17,7 +19,7 @@ const PortfolioSection = () => {
           </h2>
         </div>
       </div>
-      <Slider />
+      <SwiperComponent />
 
       <FeaturedWork />
       <div className="flex justify-center items-center">

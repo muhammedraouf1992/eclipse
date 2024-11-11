@@ -18,6 +18,7 @@ export const addProjectAction = async (formData) => {
   const { data } = parsedData;
 
   const url = await uploadSingleImage(data.imgUrl);
+  const coverUrl = await uploadSingleImage(data.coverImg);
 
   const urls = await uploadImages(data.gridImgs);
 
@@ -29,6 +30,7 @@ export const addProjectAction = async (formData) => {
       slug: projectSlug,
       description: data.description,
       imgUrl: url,
+      coverImg: coverUrl,
       gridImgs: urls.join(","),
       categoryId: data.categoryId,
     },

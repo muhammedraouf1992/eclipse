@@ -38,6 +38,7 @@ export default function AddProjectCategoryForm() {
     formData.append("title", values.title);
     formData.append("slug", values.slug);
     formData.append("imgUrl", values.imgUrl);
+    formData.append("coverImg", values.coverImg);
     formData.append("description", values.description);
     startTransition(async () => {
       try {
@@ -85,6 +86,32 @@ export default function AddProjectCategoryForm() {
         <FormField
           control={form.control}
           name="imgUrl"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="capitalize text-lg">banner image</FormLabel>
+              <FormControl>
+                <Input
+                  className="fileinput"
+                  type="file"
+                  onChange={(e) => {
+                    // Capture the selected file
+                    const selectedFile = e.target.files?.[0] || null;
+                    // Manually trigger the onChange event with the selected file
+                    field.onChange(selectedFile);
+                  }}
+                  ref={field.ref} // Ensure the input is properly registered
+                />
+              </FormControl>
+              <FormDescription>
+                This is banner image. size should be 1200*628
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="coverImg"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="capitalize text-lg">banner image</FormLabel>

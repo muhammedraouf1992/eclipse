@@ -20,6 +20,7 @@ export const addProjectCategory = async (formData) => {
   const { data } = parsedData;
 
   const url = await uploadSingleImage(data.imgUrl);
+  const coverImg = await uploadSingleImage(data.coverImg);
 
   const dataSlug = convertToKebabCase(data.slug);
 
@@ -28,6 +29,7 @@ export const addProjectCategory = async (formData) => {
       title: data.title,
       slug: dataSlug,
       imgUrl: url,
+      coverImg: coverImg,
       description: data.description,
     },
   });

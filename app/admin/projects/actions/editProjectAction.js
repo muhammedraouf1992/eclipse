@@ -30,11 +30,23 @@ export const editProjectAction = async (formData, project) => {
     await deleteImage(publicId);
   }
 
-  let urls = [];
+  let coverImg = project.coverImg;
 
+  if (data.coverImg) {
+    coverImg = await uploadSingleImage(data.coverImg);
+
+    const publicId = project.coverImg.split("/").pop().split(".")[0];
+    await deleteImage(publicId);
+  }
+
+  let urls = [];
   if (data.gridImgs) {
     urls = await uploadImages(data.gridImgs);
   }
+  let finalLink =
+    urls.length > 0
+      ? project.gridImgs + "," + urls.join(",")
+      : project.gridImgs;
 
   await prisma.project.update({
     where: {
@@ -46,7 +58,8 @@ export const editProjectAction = async (formData, project) => {
       description: data.description,
       categoryId: data.categoryId,
       imgUrl: newFilePath,
-      gridImgs: project.gridImgs + "," + urls.join(","),
+      coverImg: coverImg,
+      gridImgs: finalLink,
     },
   });
   revalidatePath("/admin/projects", "page");

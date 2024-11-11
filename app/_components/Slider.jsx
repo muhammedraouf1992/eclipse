@@ -14,6 +14,7 @@ import slider4 from "@/public/slider4.jpg";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 const Slider = () => {
   return (
@@ -37,60 +38,68 @@ const Slider = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper !py-10"
       >
-        <SwiperSlide className="relative">
-          <Image
-            src={slider1}
-            width={500}
-            height={500}
-            alt="slider image"
-            sizes="
+        <SwiperSlide>
+          <Link className="relative" href={"/branding"}>
+            <Image
+              src={slider1}
+              width={500}
+              height={500}
+              alt="slider image"
+              sizes="
             500px"
-          />
-          <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
-            branding
-          </h4>
+            />
+            <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
+              branding
+            </h4>
+          </Link>
         </SwiperSlide>
 
-        <SwiperSlide className="relative">
-          <Image
-            src={slider2}
-            width={500}
-            height={500}
-            alt="slider image"
-            sizes="
+        <SwiperSlide>
+          <Link className="relative" href={"/production"}>
+            <Image
+              src={slider2}
+              width={500}
+              height={500}
+              alt="slider image"
+              sizes="
             500px"
-          />
-          <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
-            production
-          </h4>
+            />
+            <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
+              production
+            </h4>
+          </Link>
         </SwiperSlide>
 
-        <SwiperSlide className="relative">
-          <Image
-            src={slider3}
-            width={500}
-            height={500}
-            alt="slider image"
-            sizes="
+        <SwiperSlide>
+          <Link className="relative" href={"/development"}>
+            <Image
+              src={slider3}
+              width={500}
+              height={500}
+              alt="slider image"
+              sizes="
             500px"
-          />
-          <h4 className="absolute bottom-10 left-5 text-2xl capitalize">
-            webs & apps development
-          </h4>
+            />
+            <h4 className="absolute bottom-10 left-5 text-2xl capitalize">
+              webs & apps development
+            </h4>
+          </Link>
         </SwiperSlide>
 
-        <SwiperSlide className="relative">
-          <Image
-            src={slider4}
-            width={500}
-            height={500}
-            alt="slider image"
-            sizes="
+        <SwiperSlide>
+          <Link className="relative" href={"/digital-marketing"}>
+            <Image
+              src={slider4}
+              width={500}
+              height={500}
+              alt="slider image"
+              sizes="
             500px"
-          />
-          <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
-            digital marketing
-          </h4>
+            />
+            <h4 className="absolute bottom-10 left-5 text-3xl capitalize">
+              digital marketing
+            </h4>
+          </Link>
         </SwiperSlide>
       </Swiper>
     </div>

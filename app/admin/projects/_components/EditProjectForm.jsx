@@ -47,6 +47,7 @@ export default function EditProjectForm({ project, categories }) {
       description: project.description || "",
       categoryId: project.categoryId || "",
       imgUrl: "",
+      coverImg: "",
     },
   });
 
@@ -58,6 +59,7 @@ export default function EditProjectForm({ project, categories }) {
     formData.append("slug", values.slug);
 
     formData.append("imgUrl", values.imgUrl);
+    formData.append("coverImg", values.coverImg);
 
     formData.append("description", values.description);
 
@@ -169,7 +171,7 @@ export default function EditProjectForm({ project, categories }) {
                   />
                 </FormControl>
                 <FormDescription>
-                  This is banner image. size should be 1200*628
+                  This is banner image. size should be 1080*1080
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -182,7 +184,42 @@ export default function EditProjectForm({ project, categories }) {
             alt="blogImage"
           />
         </div>
-
+        <div>
+          <FormField
+            control={form.control}
+            name="coverImg"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="capitalize text-lg">
+                  Cover image
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    className="fileinput"
+                    type="file"
+                    onChange={(e) => {
+                      // Capture the selected file
+                      const selectedFile = e.target.files?.[0] || null;
+                      // Manually trigger the onChange event with the selected file
+                      field.onChange(selectedFile);
+                    }}
+                    ref={field.ref} // Ensure the input is properly registered
+                  />
+                </FormControl>
+                <FormDescription>
+                  This is banner image. size should be 1080*1080
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Image
+            src={`${project.coverImg || ""}`}
+            width={200}
+            height={200}
+            alt="blogImage"
+          />
+        </div>
         <FormField
           control={form.control}
           name="description"

@@ -46,6 +46,7 @@ export function EditCategoryForm({ category }) {
     formData.append("title", values.title);
     formData.append("slug", values.slug);
     formData.append("imgUrl", values.imgUrl);
+    formData.append("coverImg", values.coverImg);
     formData.append("description", values.description);
 
     startTransition(async () => {
@@ -118,6 +119,42 @@ export function EditCategoryForm({ category }) {
           />
           <Image
             src={`${category.imgUrl}`}
+            width={200}
+            height={200}
+            alt="blogImage"
+          />
+        </div>
+        <div>
+          <FormField
+            control={form.control}
+            name="coverImg"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="capitalize text-lg">
+                  cover image
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    className="fileinput"
+                    type="file"
+                    onChange={(e) => {
+                      // Capture the selected file
+                      const selectedFile = e.target.files?.[0] || null;
+                      // Manually trigger the onChange event with the selected file
+                      field.onChange(selectedFile);
+                    }}
+                    ref={field.ref} // Ensure the input is properly registered
+                  />
+                </FormControl>
+                <FormDescription>
+                  This is banner image. size should be 1200*628
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Image
+            src={`${category.coverImg || ""}`}
             width={200}
             height={200}
             alt="blogImage"

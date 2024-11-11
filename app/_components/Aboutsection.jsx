@@ -82,7 +82,7 @@ const Aboutsection = () => {
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <p className="text-xl stagger-text">
-              <span className="font-bold">We don't just </span>
+              <span className="font-bold">We don&apos;t just </span>
               <br />
               create solutions
             </p>

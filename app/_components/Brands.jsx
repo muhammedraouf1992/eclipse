@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import brand from "@/public/brand-1.png";
+
 import brandImg1 from "@/public/brands/669f629d013a9a65acf29377_Untitled design (1) (1).png";
 import brandImg2 from "@/public/brands/394794778_1296871344309598_3486781947294340961_n.png";
 import brandImg3 from "@/public/brands/alajlan-1.png";

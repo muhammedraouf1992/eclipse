@@ -10,6 +10,11 @@ export const deleteCategoryAction = async (category) => {
     await deleteImage(publicId);
   }
 
+  if (category.coverImg) {
+    const publicId = category.coverImg.split("/").pop().split(".")[0];
+    await deleteImage(publicId);
+  }
+
   await prisma.projectCategory.delete({ where: { id: category.id } });
 
   revalidatePath("/admin/projects", "page");

@@ -26,7 +26,7 @@ const LearnSection = () => {
       <div className="lg:p-20">
         <p className="text-gray-300 capitalize text-lg">
           Driving growth and innovation with tailored strategies, empowering
-          businesses to achieve success and thrive in today's competitive
+          businesses to achieve success and thrive in today&apos;s competitive
           landscape.
         </p>
       </div>

@@ -8,10 +8,10 @@ const DriveIntoSection = () => {
         <span className="font-bold">
           We dive into your business goals to unlock growth, boost revenue,
         </span>{" "}
-        and enhance your brand's visibility. By focusing on innovative marketing
-        strategies, customer-centric solutions, and delivering excellence, we
-        help you stand out in a competitive digital landscape and achieve
-        measurable results.
+        and enhance your brand&apos;s visibility. By focusing on innovative
+        marketing strategies, customer-centric solutions, and delivering
+        excellence, we help you stand out in a competitive digital landscape and
+        achieve measurable results.
       </h5>
       <div className="relative w-full h-[400px] my-10 lg:my-0 lg:h-[500px] order-1 lg:order-2">
         <Image

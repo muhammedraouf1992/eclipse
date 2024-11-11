@@ -11,7 +11,7 @@ const CustomBtn = ({ variant, text, href = "#" }) => {
 
   return (
     <div className={"wc-btn-wrapper style-1"}>
-      <Link href={href} className="wc-btn-group">
+      <Link href={href} className="wc-btn-group" aria-label="read more">
         <span className={cn("wc-btn-play  ", customClasses)}>
           <ArrowUpRight />
         </span>

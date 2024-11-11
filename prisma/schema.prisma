@@ -81,6 +81,7 @@ model ProjectCategory {
   slug        String
   description String
   imgUrl      String
+  coverImg    String?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   Project     Project[]
@@ -92,6 +93,7 @@ model Project {
   slug            String
   description     String
   imgUrl          String
+  coverImg        String?
   gridImgs        String
   categoryId      String
   projectCategory ProjectCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
