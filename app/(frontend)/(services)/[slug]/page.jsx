@@ -1,7 +1,7 @@
 import prisma from "@/prismaClient";
 import Image from "next/image";
 import Link from "next/link";
-
+import parse from "html-react-parser";
 import React from "react";
 
 const ServicesPage = async ({ params }) => {
@@ -12,22 +12,37 @@ const ServicesPage = async ({ params }) => {
   return (
     <div className="pt-40 lg:pt-40">
       <div>
-        <Image
-          src={service.imgUrl}
-          width={"1920"}
-          height={"1080"}
-          alt="service image"
-          className="w-full object-fit"
-        />
+        <div>
+          <Image
+            src={service.imgUrl}
+            width={"1920"}
+            height={"1080"}
+            alt="service image"
+            className="w-full object-fit"
+          />
+        </div>
+        <div className="mt-5  mb-20">
+          <h1 className="text-6xl text-center lg:text-[100px] uppercase bg-black">
+            {service.title}
+          </h1>
+          <p className="text-md text-center uppercase font-bold">
+            Eclipse agency
+          </p>
+        </div>
       </div>
-      <div className="mt-5  mb-20">
-        <h1 className="text-6xl text-center lg:text-[100px] uppercase bg-black">
-          {service.title}
-        </h1>
-        <p className="text-md text-center uppercase font-bold">
-          Eclipse agency
-        </p>
-      </div>
+      <section className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center lg:my-[7rem]">
+          <div className="lg:p-5 service">{parse(service.description)}</div>
+          <div>
+            <Image
+              src={service.coverImg || ""}
+              width={600}
+              height={600}
+              alt="service image"
+            />
+          </div>
+        </div>
+      </section>
       <div className="grid grid-cols-1 lg:grid-cols-3 relative">
         {service.Project.length > 0 ? (
           service.Project.map((project) => (

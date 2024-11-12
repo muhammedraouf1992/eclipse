@@ -114,6 +114,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  /* on the admin  */
   h1.blog-title {
     @apply text-4xl font-bold;
   }
@@ -135,8 +136,30 @@ body {
   .blog-text {
     @apply p-2 bg-foreground text-background rounded-md;
   }
-  .blog-text {
-    @apply p-2 bg-foreground text-background rounded-md;
+  /*  on the frontend */
+  .service h1.blog-title {
+    @apply text-5xl font-bold my-1;
+  }
+  .service h2.blog-title {
+    @apply text-4xl font-bold my-1;
+  }
+  .service h3.blog-title {
+    @apply text-3xl font-bold my-1;
+  }
+  .service h4.blog-title {
+    @apply text-2xl font-bold my-1;
+  }
+  .service h5.blog-title {
+    @apply text-xl font-bold my-1;
+  }
+  .service h6.blog-title {
+    @apply text-lg font-bold my-1;
+  }
+  .service .blog-text {
+    @apply text-lg p-2 bg-foreground text-background rounded-md my-1;
+  }
+  mark {
+    @apply bg-transparent text-primary;
   }
 }
 
