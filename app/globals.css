@@ -115,22 +115,22 @@ body {
     @apply bg-background text-foreground;
   }
   h1.blog-title {
-    @apply text-5xl font-bold;
-  }
-  h2.blog-title {
     @apply text-4xl font-bold;
   }
-  h3.blog-title {
+  h2.blog-title {
     @apply text-3xl font-bold;
   }
-  h4.blog-title {
+  h3.blog-title {
     @apply text-2xl font-bold;
   }
-  h5.blog-title {
+  h4.blog-title {
     @apply text-xl font-bold;
   }
-  h6.blog-title {
+  h5.blog-title {
     @apply text-lg font-bold;
+  }
+  h6.blog-title {
+    @apply text-[16px] font-bold;
   }
   .blog-text {
     @apply p-2 bg-foreground text-background rounded-md;

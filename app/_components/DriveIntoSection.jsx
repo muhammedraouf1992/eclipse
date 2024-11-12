@@ -3,8 +3,8 @@ import React from "react";
 import customImg from "@/public/customImg.jpg";
 const DriveIntoSection = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] items-center my-20 gap-2">
-      <h5 className="text-2xl  lg:text-4xl leading-[1.4em] order-2 lg:order-1">
+    <section className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] items-center my-20 gap-2 lg:gap-5">
+      <h5 className="text-2xl  lg:text-3xl xl:text-4xl leading-[1.4em] order-2 lg:order-1">
         <span className="font-bold">
           We dive into your business goals to unlock growth, boost revenue,
         </span>{" "}

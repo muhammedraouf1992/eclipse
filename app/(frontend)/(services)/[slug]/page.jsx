@@ -21,7 +21,7 @@ const ServicesPage = async ({ params }) => {
         />
       </div>
       <div className="mt-5  mb-20">
-        <h1 className="text-6xl text-center lg:text-[140px] uppercase bg-black">
+        <h1 className="text-6xl text-center lg:text-[100px] uppercase bg-black">
           {service.title}
         </h1>
         <p className="text-md text-center uppercase font-bold">

@@ -30,10 +30,10 @@ export const editCategoryAction = async (formData, category) => {
 
   if (data.coverImg) {
     coverImg = await uploadSingleImage(data.coverImg);
-    // if (category.coverImg) {
-    //   const publicId = category.coverImg.split("/").pop().split(".")[0];
-    //   await deleteImage(publicId);
-    // }
+    if (category.coverImg) {
+      const publicId = category.coverImg.split("/").pop().split(".")[0];
+      await deleteImage(publicId);
+    }
   }
 
   const dataSlug = convertToKebabCase(data.slug);

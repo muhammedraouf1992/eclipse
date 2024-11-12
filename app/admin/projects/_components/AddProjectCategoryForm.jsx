@@ -18,7 +18,8 @@ import { addProjectCategorySchema } from "@/lib/validationSchema";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { addProjectCategory } from "../actions/addCategoryAction";
-import { Textarea } from "@/components/ui/textarea";
+
+import RichTextEditor from "../../_components/RichTextEditor";
 
 export default function AddProjectCategoryForm() {
   const [isPending, startTransition] = useTransition();
@@ -135,6 +136,7 @@ export default function AddProjectCategoryForm() {
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="description"
@@ -142,7 +144,10 @@ export default function AddProjectCategoryForm() {
             <FormItem>
               <FormLabel className="capitalize text-lg">description</FormLabel>
               <FormControl>
-                <Textarea placeholder="Category description" {...field} />
+                <RichTextEditor
+                  content={field.value}
+                  onChange={(value) => field.onChange(value)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

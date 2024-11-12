@@ -5,7 +5,7 @@ import MoonComponent from "./MoonComponent";
 const HeroSection = () => {
   return (
     <section className="mb-[20rem] lg:container lg:mx-auto">
-      <div className="px-5 lg:px-0 h-[65vh] lg:h-[70vh] mb-10 relative flex">
+      <div className="px-5 lg:px-5 h-[65vh] lg:h-[70vh] mb-10 relative flex">
         <MoonComponent />
 
         <div className="max-w-2xl mt-24">
@@ -23,12 +23,14 @@ const HeroSection = () => {
                 fill="white"
               ></path>
             </svg>
-            <p className="text-xl uppercase ">ECLIPSE AGENCY</p>
+            <p className="text-xl uppercase">ECLIPSE AGENCY</p>
           </div>
           <div className="my-10">
-            <h2 className="text-5xl lg:text-8xl font-extrabold ">
+            <h2 className="text-5xl lg:text-7xl xl:text-8xl  font-extrabold ">
               Empowering <br />
-              <span className="font-normal">business Solution</span>
+              <span className="font-normal">
+                business <br /> Solution
+              </span>
             </h2>
           </div>
         </div>

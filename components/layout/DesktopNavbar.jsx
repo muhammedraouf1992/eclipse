@@ -41,16 +41,46 @@ const DesktopNavbar = ({ categories }) => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
                     <NavigationMenuContent className="px-3">
-                      {categories.map((category) => (
-                        <NavigationMenuLink key={category.id} asChild>
-                          <Link
-                            href={`/${category.slug}`}
-                            className="MenuLink hover:text-primary"
-                          >
-                            {category.title}
-                          </Link>
-                        </NavigationMenuLink>
-                      ))}
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={`/branding`}
+                          className="MenuLink hover:text-primary"
+                        >
+                          Branding
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={`/digital-marketing`}
+                          className="MenuLink hover:text-primary"
+                        >
+                          Social Media Management
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={`/seo`}
+                          className="MenuLink hover:text-primary"
+                        >
+                          Search Engine Optimization (SEO)
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={`/development`}
+                          className="MenuLink hover:text-primary"
+                        >
+                          Web & App Development
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={`/production`}
+                          className="MenuLink hover:text-primary"
+                        >
+                          Production & Animation
+                        </Link>
+                      </NavigationMenuLink>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 </NavigationMenuList>

@@ -25,6 +25,7 @@ import Image from "next/image";
 
 import { Textarea } from "@/components/ui/textarea";
 import { editCategoryAction } from "../actions/editCategoryAction";
+import RichTextEditor from "../../_components/RichTextEditor";
 
 export function EditCategoryForm({ category }) {
   const [isPending, startTransition] = useTransition();
@@ -36,6 +37,7 @@ export function EditCategoryForm({ category }) {
       slug: category.slug || "",
       description: category.description || "",
       imgUrl: "",
+      coverImg: "",
     },
   });
 
@@ -95,7 +97,7 @@ export function EditCategoryForm({ category }) {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="capitalize text-lg">
-                  feature image
+                  banner image
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -147,7 +149,7 @@ export function EditCategoryForm({ category }) {
                   />
                 </FormControl>
                 <FormDescription>
-                  This is banner image. size should be 1200*628
+                  This is banner image. size should be 1080*1080
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -166,9 +168,12 @@ export function EditCategoryForm({ category }) {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="capitalize text-lg">Content</FormLabel>
+              <FormLabel className="capitalize text-lg">description</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <RichTextEditor
+                  content={field.value}
+                  onChange={(value) => field.onChange(value)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
