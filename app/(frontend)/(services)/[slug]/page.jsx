@@ -14,7 +14,7 @@ const ServicesPage = async ({ params }) => {
       <div>
         <div>
           <Image
-            src={service.imgUrl}
+            src={service.imgUrl || ""}
             width={"1920"}
             height={"1080"}
             alt="service image"

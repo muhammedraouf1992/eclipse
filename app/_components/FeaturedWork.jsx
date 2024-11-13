@@ -35,7 +35,6 @@ const FeaturedWork = () => {
         },
       }
     );
-
     gsap.fromTo(
       astraRef2.current,
       {
@@ -48,7 +47,6 @@ const FeaturedWork = () => {
         x: 0,
         opacity: 1,
         duration: 1,
-
         ease: "power3.inOut",
         scrollTrigger: {
           trigger: astraRef2.current,
@@ -60,7 +58,7 @@ const FeaturedWork = () => {
   }, []);
   return (
     <section
-      className="flex flex-col my-20 lg:flex-row lg:justify-between lg:px-28 gap-5 lg:gap-0"
+      className="flex flex-col my-20 lg:flex-row lg:justify-between lg:px-28 gap-5 lg:gap-0 overflow-hidden"
       ref={astraRef}
     >
       <div className="astraref" ref={astraRef1}>
