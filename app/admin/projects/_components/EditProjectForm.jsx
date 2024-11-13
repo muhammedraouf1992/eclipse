@@ -155,7 +155,7 @@ export default function EditProjectForm({ project, categories }) {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="capitalize text-lg">
-                  feature image
+                  banner image
                 </FormLabel>
                 <FormControl>
                   <Input

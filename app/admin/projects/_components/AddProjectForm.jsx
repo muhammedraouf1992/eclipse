@@ -172,7 +172,7 @@ export default function AddProjectForm({ categories }) {
                 />
               </FormControl>
               <FormDescription>
-                This is banner image. size should be 1200*628
+                This is banner image. size should be 1080*1080
               </FormDescription>
               <FormMessage />
             </FormItem>
